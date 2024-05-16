@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="fonts/ofont.ru_Intro.ttf">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="head">
+    <div>
+        <a href="#">SneakMax</a>
+        <div>
+            <a href="index.html#k">Каталог</a>
+            <a href="index.html#o">О нас</a>
+            <a href="index.html#p">Подбор товара</a>
+            <a href="index.html#t">Наша команда</a>
+            <a href="index.html#q">Частые вопросы</a>
+            <a href="index.html#c">Контакты</a>
+            <label style="cursor: pointer" for="kor">Корзина<img src="img/Vector.svg"><p class="kol">0</p></label>
+        </div>
+        <div>
+            <img onclick="document.querySelector('.sp2').style.display = 'block'; " src="img/gum.png" style="width: 30px; position: relative; top: 5px">
+            <label for="kor"><img src="img/Vector.svg"><p class="kol1">0</p></label>
+        </div>
+    </div>
+    <hr>
+</div>
+<div onclick="document.querySelector('.sp2').style.display = 'none';">
+<div class="sp2">
+    <a href="index.html#k">Каталог</a>
+    <a href="index.html#o">О нас</a>
+    <a href="index.html#p">Подбор товара</a>
+    <a href="index.html#t">Наша команда</a>
+    <a href="index.html#q">Частые вопросы</a>
+    <a href="index.html#c">Контакты</a>
+</div>
+
+<input type="checkbox" id="kor">
+<div class="kor">
+    <label for="kor">закрыть</label>
+    <div id="card"></div>
+    <div class="obsh">
+        <div>
+            <p>итого:</p>
+            <p class="sum">0</p>
+        </div>
+        <a>Создать заказ</a>
+    </div>
+</div>
+
+<div class="header">
+    <p>Кроссовки известных брендов<br>
+        с доставкой по России и СНГ</p>
+    <p>Мы продаем кроссовки брендов Nike, Adidas, Puma, Reebok,
+        Converse и многие другие по низким ценам</p>
+    <p>SneakMax</p>
+    <div>
+        <a href="index.html#k">Перейти к покупкам</a>
+    </div>
+</div>
+
+<p class="nameK" id="k">Каталог</p>
+<input id="fil" type="checkbox" style="display: none">
+<label class="fil" for="fil">Фильтр:</label>
+<div class="katalog">
+    <div>
+        <p>Подбор<br>
+        по параметрам</p>
+        <p>Название</p>
+        <input type="text" id="titleFilter" placeholder="Название товара">
+        <p>Цена</p>
+        <input type="number" id="minPrice" placeholder="Мин" step="100" min="0" max="100000">
+        <input type="number" id="maxPrice" placeholder="Макс" step="100" max="100000" min="0">
+        <p>Пол</p>
+        <select id="genderFilter">
+            <option value="all">Все</option>
+            <option value="male">Мужской</option>
+            <option value="female">Женский</option>
+        </select>
+        <p>Размер</p>
+        <div>
+            <input type="checkbox" id="size35" value="35" >
+            <label for="size35" onclick="active(this)">35</label>
+            <input type="checkbox" id="size36" value="36">
+            <label for="size36" onclick="active(this)">36</label>
+            <input type="checkbox" id="size37" value="37">
+            <label for="size37" onclick="active(this)">37</label>
+            <input type="checkbox" id="size38" value="38">
+            <label for="size38" onclick="active(this)">38</label>
+            <input type="checkbox" id="size39" value="39">
+            <label for="size39" onclick="active(this)">39</label>
+            <input type="checkbox" id="size40" value="40">
+            <label for="size40" onclick="active(this)">40</label>
+            <input type="checkbox" id="size41" value="41">
+            <label for="size41" onclick="active(this)">41</label>
+            <input type="checkbox" id="size42" value="42">
+            <label for="size42" onclick="active(this)">42</label>
+            <input type="checkbox" id="allSizes">
+            <label for="allSizes" onclick="active(this)">Все</label>
+        </div>
+        <button id="applyFilters">Применить</button>
+        <button id="resetFilters">показать все</button>
+    </div>
+    <div class="products" id="ttt">
+        <div class="product" data-title="Женские кроссовки Nike WMNS Air Force 1 '07 (FD0793-100)" data-price="23900" data-gender="female" data-size="35">
+            <img src="img/N1.jpg">
+            <p>Женские кроссовки Nike WMNS Air Force 1 '07 (FD0793-100)</p>
+            <label>
+                <p>23 990</p>
+                <img onclick="addToCart(this)" src="img/free-icon-add-to-cart-7361888.png">
+            </label>
+            <button><img onclick="delToCart(this)" src="img/free-icon-bin-484662.png"></button>
+        </div>
+        <div class="product" data-title="Мужские кроссовки Nike Air Max 90 NRG (CZ1929-200)" data-price="17990" data-gender="male" data-size="37">
+            <img src="img/N2.jpg">
+            <p>Мужские кроссовки Nike Air Max 90 NRG (CZ1929-200)</p>
+            <label>
+                <p>17 990</p>
+                <img onclick="addToCart(this)" src="img/free-icon-add-to-cart-7361888.png">
+            </label>
+            <button><img onclick="delToCart(this)" src="img/free-icon-bin-484662.png"></button>
+        </div>
+        <div class="product" data-title="Мужские кроссовки Nike ACG Lowcate (DM8019-201)" data-price="14990" data-gender="male" data-size="39">
+            <img src="img/N3.jpg">
+            <p>Мужские кроссовки Nike ACG Lowcate (DM8019-201)</p>
+            <label>
+                <p>14 990</p>
+                <img onclick="addToCart(this)" src="img/free-icon-add-to-cart-7361888.png">
+            </label>
+            <button><img onclick="delToCart(this)" src="img/free-icon-bin-484662.png"></button>
+        </div>
+        <div class="product" data-title="Кроссовки Nike Space Hippie 01 (CQ3986-001)" data-price="12990" data-size="38">
+            <img src="img/N4.jpg">
+            <p>Кроссовки Nike Space Hippie 01 (CQ3986-001)</p>
+            <label>
+                <p>12 990</p>
+                <img onclick="addToCart(this)" src="img/free-icon-add-to-cart-7361888.png">
+            </label>
+            <button><img onclick="delToCart(this)" src="img/free-icon-bin-484662.png"></button>
+        </div>
+        <div class="product" data-title="Мужские кроссовки Nike Zoomx Vaporfly Next% 2 (DJ5457-100)" data-price="31990" data-gender="female" data-size="40">
+            <img src="img/N5.jpg">
+            <p>Мужские кроссовки Nike Zoomx Vaporfly Next% 2 (DJ5457-100)</p>
+            <label>
+                <p>31 990</p>
+                <img onclick="addToCart(this)" src="img/free-icon-add-to-cart-7361888.png">
+            </label>
+            <button><img onclick="delToCart(this)" src="img/free-icon-bin-484662.png"></button>
+        </div>
+        <div class="product" data-title="Мужские кроссовки Nike ZoomX Vaporfly (CU4111-300)" data-price="31990" data-gender="male" data-size="39">
+            <img src="img/N6.jpg">
+            <p>Мужские кроссовки Nike ZoomX Vaporfly (CU4111-300)</p>
+            <label>
+                <p>31 990</p>
+                <img onclick="addToCart(this)" src="img/free-icon-add-to-cart-7361888.png">
+            </label>
+            <button><img onclick="delToCart(this)" src="img/free-icon-bin-484662.png"></button>
+        </div>
+        <div class="product" data-title="Женские кроссовки Nike WMNS Air Force 1 '07 LX (DD8959-110)" data-price="16990" data-gender="female" data-size="41">
+            <img src="img/N7.jpg">
+            <p>Женские кроссовки Nike WMNS Air Force 1 '07 LX (DD8959-110)</p>
+            <label>
+                <p>16 990</p>
+                <img onclick="addToCart(this)" src="img/free-icon-add-to-cart-7361888.png">
+            </label>
+            <button><img onclick="delToCart(this)" src="img/free-icon-bin-484662.png"></button>
+        </div>
+        <div class="product" data-title="Мужские кроссовки Nike Air Max SC (CW4555-107)" data-price="17990" data-gender="male" data-size="40">
+            <img src="img/N8.jpg">
+            <p>Мужские кроссовки Nike Air Max SC (CW4555-107)</p>
+            <label>
+                <p>17 990</p>
+                <img onclick="addToCart(this)" src="img/free-icon-add-to-cart-7361888.png">
+            </label>
+            <button><img onclick="delToCart(this)" src="img/free-icon-bin-484662.png"></button>
+        </div>
+        <div class="product" data-title="Мужские кроссовки Nike Air Force 1 '07 LV8 (FQ8825-100)" data-price="19990" data-gender="male" data-size="42">
+            <img src="img/N9.jpg">
+            <p>Мужские кроссовки Nike Air Force 1 '07 LV8 (FQ8825-100)</p>
+            <label>
+                <p>19 990</p>
+                <img onclick="addToCart(this)" src="img/free-icon-add-to-cart-7361888.png">
+            </label>
+            <button><img onclick="delToCart(this)" src="img/free-icon-bin-484662.png"></button>
+        </div>
+    </div>
+</div>
+<div id="o"></div>
+<div class="we">
+    <img src="img/figure.svg">
+    <div>
+        <p>Пара слов о нас</p>
+        <p>Спорт держит нас в форме. Учит дисциплине.<br>
+            Объединяет нас. Через спорт мы можем менять<br>
+            жизни. В том числе с помощью воодушевляющих<br>
+            историй спортсменов. Чтобы помочь тебе<br>
+            подняться и двигаться вперед. </p>
+        <a>SneakMax</a>
+    </div>
+    <img src="img/Mask%20Group%20(14).png">
+</div>
+<input id="i4" type="checkbox" style="display: none">
+<input id="i5" type="checkbox" style="display: none">
+<input id="i6" type="checkbox" style="display: none">
+<input id="i7" type="checkbox" style="display: none">
+
+<div class="foU1">
+    <p>Мы подберем идеальную пару для вас</p>
+    <p>Ответьте на три вопроса и мы вышлем каталог с самыми подходящими для вас моделями </p>
+    <hr>
+    <p>Какой тип кроссовок рассматриваете?</p>
+    <div>
+        <div>
+            <img src="img/фото%20кроссовка.jpg">
+            <p><input type="checkbox">кеды</p>
+        </div>
+        <div>
+            <img src="img/фото%20кроссовка.jpg">
+            <p><input type="checkbox">кеды</p>
+        </div>
+        <div>
+            <img src="img/фото%20кроссовка.jpg">
+            <p><input type="checkbox">кеды</p>
+        </div>
+        <br>
+        <div>
+            <img src="img/фото%20кроссовка.jpg">
+            <p><input type="checkbox">кеды</p>
+        </div>
+        <div>
+            <img src="img/фото%20кроссовка.jpg">
+            <p><input type="checkbox">кеды</p>
+        </div>
+        <div>
+            <img src="img/фото%20кроссовка.jpg">
+            <p><input type="checkbox">кеды</p>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <p>1 из 3</p>
+        <label for="i4">Следующий шаг</label>
+    </div>
+</div>
+<div class="foU2">
+    <p>Мы подберем идеальную пару для вас</p>
+    <p>Ответьте на три вопроса и мы вышлем каталог с самыми подходящими для вас моделями </p>
+    <hr>
+    <p>Какой размер вам подойдет?</p>
+    <div>
+        <p><input type="checkbox">мне 35</p>
+        <p><input type="checkbox">26-38</p>
+        <p><input type="checkbox">39-41</p>
+        <p><input type="checkbox">42-44</p>
+        <p><input type="checkbox">45 и больше</p>
+    </div>
+    <img src="img/Rectangle%2045.png">
+    <hr>
+    <div>
+        <p>2 из 3</p>
+        <label for="i5">Следующий шаг</label>
+    </div>
+</div>
+
+<div class="foU3">
+    <p>Мы подберем идеальную пару для вас</p>
+    <p>Ответьте на три вопроса и мы вышлем каталог с самыми подходящими для вас моделями </p>
+    <hr>
+    <p>Уточните какие-либо моменты</p>
+    <input type="text" placeholder="Введите сообщение">
+    <hr>
+    <div>
+        <p>3 из 3</p>
+        <label for="i6">Следующий шаг</label>
+    </div>
+</div>
+
+<div class="foU4">
+    <p>Ваша подборка готова!</p>
+    <p>Оставьте свои контактные данные, чтобы бы мы могли отправить  подготовленный для вас каталог</p>
+    <hr>
+    <div>
+        <div>
+            <p>Получить предложение</p>
+            <p>Получите подборку подходящих для вас моделей на почту</p>
+            <input type="text" placeholder="Ваше имя">
+            <input type="text" placeholder="E-mail">
+            <label for="i7">Получить</label>
+        </div>
+        <img src="img/iPhone%2011%20Pro.png">
+    </div>
+</div>
+
+<div class="foU5">
+    <div>
+        <img src="img/Vector%20(2).png">
+        <p>Отправлено</p>
+    </div>
+</div>
+
+<div id="t"></div>
+<div class="team">
+    <img src="img/Group%2072.svg">
+    <p>Наша команда</p>
+    <div>
+        <div>
+            <img src="img/Mask%20Group.jpg">
+            <p>Максим Золоторёв</p>
+            <p>Администратор</p>
+        </div>
+        <div>
+            <img src="img/Mask%20Group%20(1).jpg">
+            <p>Максим Золоторёв</p>
+            <p>Администратор</p>
+        </div>
+        <div>
+            <img src="img/Mask%20Group%20(2).jpg">
+            <p>Максим Золоторёв</p>
+            <p>Администратор</p>
+        </div>
+        <div>
+            <img src="img/Mask%20Group%20(3).jpg">
+            <p>Максим Золоторёв</p>
+            <p>Администратор</p>
+        </div>
+        <div>
+            <img src="img/Mask%20Group%20(4).jpg">
+            <p>Максим Золоторёв</p>
+            <p>Администратор</p>
+        </div>
+        <div>
+            <img src="img/Mask%20Group%20(5).jpg">
+            <p>Максим Золоторёв</p>
+            <p>Администратор</p>
+        </div>
+    </div>
+</div>
+<div id="q"></div>
+<p class="nameQ">Часто задаваемые вопросы</p>
+<div class="quest">
+    <div>
+        <hr>
+        <input id="i1" type="checkbox" checked>
+        <label for="i1">Вопрос 1</label>
+        <p class="q1">Ответ на вопрос  1</p>
+        <hr>
+        <input id="i2" type="checkbox">
+        <label for="i2">Вопрос 2</label>
+        <p class="q2">Ответ на вопрос 2</p>
+        <hr>
+    </div>
+</div>
+<div id="c"></div>
+<div class="map">
+    <div>
+        <p>Контакты</p>
+        <p title="Адрес и телефон для корреспонденции, инвесторов. &#013 Вопросы о доставке, качестве обслуживания и товара &#013 просьба задавать в отдел продаж">
+            Главный офис
+        </p>
+        <div>+7 800 789 89 89</div>
+        <p>г. Санкт-Петербург, Комсомольская, 43 к1</p>
+        <p title="Адрес и телефон для корреспонденции,инвесторов.&#013 Вопросы о доставке, качествеобслуживания и товара&#013 просьба задавать в отдел продаж">
+            отдел продаж
+        </p>
+        <div>+7 800 789 89 89</div>
+        <p>г. Санкт-Петербург, Комсомольская, 43 к1</p>
+        <div>
+            <img src="img/VK.svg">
+            <img src="img/Instagram.svg">
+        </div>
+    </div>
+    <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/2/saint-petersburg/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Санкт‑Петербург</a>
+        <a href="https://yandex.ru/maps/2/saint-petersburg/house/2_ya_komsomolskaya_ulitsa_43/Z0kYdwNiSEAFQFtjfXRycXhqbQ==/?ll=30.142152%2C59.830499&source=serp_navig&utm_medium=mapframe&utm_source=maps&z=16" style="color:#eee;font-size:12px;position:absolute;top:14px;">
+            2-я Комсомольская улица, 43 — Яндекс Карты</a>
+        <iframe src="https://yandex.ru/map-widget/v1/?ll=30.142152%2C59.830499&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NzQwOTcwNBJb0KDQvtGB0YHQuNGPLCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywgMi3RjyDQmtC-0LzRgdC-0LzQvtC70YzRgdC60LDRjyDRg9C70LjRhtCwLCA0MyIKDR8j8UEVblJvQg%2C%2C&source=serp_navig&z=16"
+                 frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
+    </div>
+</div>
+
+<div class="anowerQ">
+    <form>
+        <p>Есть вопросы?</p>
+        <p>Заполните форму и наш<br>
+            менеджер свяжется с вами</p>
+        <input type="email" placeholder="Ваше имя">
+        <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___ __ __" pattern="\+7 \([0-9]{3}\) [0-9]{3} [0-9]{2} [0-9]{2}" required>
+        <a></a>
+        <label for="i3">Отправить</label>
+        <input id="i3" type="reset" style="display: none">
+    </form>
+    <img src="img/Group%2061.png">
+</div>
+
+<div class="bottom">
+    <a href="#">SneakMax</a>
+    <div>
+        <a href="index.html#k">Каталог</a>
+        <a href="index.html#o">О нас</a>
+        <a href="index.html#p">Подбор товара</a>
+        <a href="index.html#t">Наша команда</a>
+        <a href="index.html#q">Частые вопросы</a>
+        <a href="index.html#c">Контакты</a>
+    </div>
+</div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
